@@ -60,14 +60,10 @@ public class ListaEstatica {
             return;
         }
         
-        int tmp[] = new int[tamanho - posicao];
-        for(int i = posicao + 1; i < tamanho; i++) {
-            tmp[i - posicao - 1] = info[i];
+        for(int i = posicao; i < tamanho; i++) {
+            info[i] = info[i + 1];  
         }
         tamanho--;
-        for(int i = posicao; i < tamanho; i++) {
-            info[i] = tmp[i - posicao];
-        }
     }
     
     public void liberar() {
@@ -83,10 +79,7 @@ public class ListaEstatica {
     }
     
     public boolean estaVazia() {
-        if(tamanho == 0) {
-            return true;
-        }
-        return false;
+        return tamanho == 0;
     }
     
     @Override

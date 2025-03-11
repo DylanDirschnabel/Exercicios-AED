@@ -70,6 +70,7 @@ public class ListaEstatica <T> {
         for(int i = posicao; i < tamanho; i++) {
             info[i] = info[i + 1];  
         }
+        info[tamanho] = null;
         tamanho--;
         
     }
