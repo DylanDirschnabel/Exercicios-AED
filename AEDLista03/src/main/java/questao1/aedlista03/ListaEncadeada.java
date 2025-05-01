@@ -83,13 +83,17 @@ public class ListaEncadeada <T> {
     }
    
     public NoLista<T> obterNo(int idx) {
-        if(idx < 0 || idx > obterComprimento()) {
+        if(idx < 0 || primeiroNodo == null) {
             throw new IndexOutOfBoundsException();
         }
+        
         NoLista<T> p = primeiroNodo;
-        while(idx != 0) {
+        while(idx != 0 && p.getProximoNodulo() != null) {
             p = p.getProximoNodulo();
             idx --;
+        }
+        if(idx != 0) {
+            throw new IndexOutOfBoundsException();
         }
         return p;
     }
