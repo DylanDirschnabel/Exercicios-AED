@@ -33,6 +33,37 @@ public class ArvoreBinariaAbstractTest {
 
     }
 
+    @Test
+    public void Teste2() {
+        ArvoreBinariaBusca arvore = new ArvoreBinariaBusca();
+        
+        arvore.inserir(50);
+        arvore.inserir(30);
+        arvore.inserir(25);
+        arvore.inserir(40);
+        arvore.retirar(40);
+
+        assertEquals(arvore.toString(), "<50<30<25<><>><>><>>");
+
+    }
+    
+    @Test
+    public void Teste3() {
+        ArvoreBinariaBusca arvore = new ArvoreBinariaBusca();
+        
+        arvore.inserir(80);
+        arvore.inserir(52);
+        arvore.inserir(90);
+        arvore.inserir(48);
+        arvore.inserir(71);
+        arvore.inserir(63);
+        arvore.inserir(67);
+        arvore.retirar(71);
+
+
+        assertEquals(arvore.toString(), "<80<52<48<><>><63<><67<><>>>><90<><>>>");
+
+    }
     
     
 }
